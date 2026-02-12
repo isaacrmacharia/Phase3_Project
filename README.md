@@ -1,97 +1,94 @@
-# SyriaTel Customer Churn Prediction
 
-## Project Overview
+# 📊 Customer Churn Prediction — SyriaTel
 
-Customer churn represents a direct revenue risk to the business. This
-project aims to predict customer churn early, enabling proactive
-retention strategies and more effective resource allocation.
+## 🔎 Project Overview
+Customer churn represents a direct revenue risk for telecommunications companies. This project aims to predict which customers are likely to leave (churn) so the business can take proactive retention actions.
 
-The objective is to build a classification model that identifies
-customers who are likely to churn so that targeted interventions can be
-implemented before revenue is lost.
+By identifying at-risk customers early, the company can improve customer retention, reduce revenue loss, and allocate resources more effectively.
 
-------------------------------------------------------------------------
+---
 
-## Business Objective
+## 🎯 Business Objective
+- Identify customers likely to churn
+- Enable proactive retention strategies
+- Reduce revenue loss and operational costs
+- Support data-driven decision-making
 
--   Identify high-risk customers before they churn
--   Enable data-driven retention strategies
--   Reduce revenue loss and operational inefficiencies
--   Support decision-making with measurable performance metrics
+---
 
-------------------------------------------------------------------------
+## 📁 Dataset Summary
+- Total test samples: **667**
+- Non-churn customers: **570**
+- Churn customers: **97**
+- Dataset is imbalanced (minority churn class)
 
-## Dataset Summary
+---
 
--   Total Test Samples: 667
--   Majority Class (Non-Churn): 570
--   Minority Class (Churn): 97
--   Dataset is imbalanced
+## 🧠 Models Evaluated
+1. Logistic Regression (baseline)
+2. Random Forest (tuned)
+3. XGBoost (final model)
 
-------------------------------------------------------------------------
+---
 
-## Model Used
+## 📈 Model Performance Comparison
 
-Logistic Regression (baseline model)
+| Metric | Logistic Regression | Random Forest | XGBoost |
+|--------|--------------------|---------------|---------|
+| Accuracy | 85.9% | 92–93% | **94.1%** |
+| Churn Recall | 24% | 64–79% | **78%** |
+| Churn Precision | 53% | 71–86% | **81%** |
+| Churn F1-score | 0.33 | 0.73–0.75 | **0.80** |
 
-------------------------------------------------------------------------
+---
 
-## Evaluation Metrics
+## 🏆 Final Model: XGBoost
 
-Due to class imbalance, multiple metrics were used:
+### Key Results
+- **Accuracy:** 94%
+- **Churn Recall:** 78%
+- **Churn Precision:** 81%
+- **F1-score:** 0.80
 
--   **Accuracy** -- Overall correctness of predictions
--   **Precision** -- Quality of churn predictions
--   **Recall** -- Ability to detect churn customers
--   **F1-Score** -- Balance between precision and recall
--   **Confusion Matrix** -- Detailed error analysis
+### Business Impact
+- Detects most at-risk customers
+- Significantly reduces missed churn cases
+- Maintains low false alarms
+- Enables targeted retention campaigns
 
-------------------------------------------------------------------------
+---
 
-## Model Performance
+## ⚙️ Key Techniques Used
+- Handling class imbalance (`scale_pos_weight`, class weighting)
+- One-hot encoding for categorical variables
+- Hyperparameter tuning
+- Threshold optimization
+- Model comparison and evaluation
 
--   Accuracy: **85.9%**
--   Churn Recall: **24%**
--   Churn F1-Score: **0.33**
+---
 
-### Key Insight
+## 📊 Evaluation Metrics
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- ROC AUC
+- Confusion Matrix
 
-Although the model shows strong overall accuracy, it performs poorly in
-detecting churn customers. Approximately 76% of churn cases go
-undetected, limiting its effectiveness for retention strategy
-implementation.
+---
 
-------------------------------------------------------------------------
+## 📌 Conclusion
+Transitioning from Logistic Regression to XGBoost significantly improved churn detection. The final model achieves 94% accuracy and identifies 78% of churn cases, providing strong business value and supporting proactive customer retention strategies.
 
-## Business Impact
+---
 
--   Majority of churn customers go undetected
--   Retention efforts may miss high-risk customers
--   Potential financial and operational impact
--   Model currently biased toward predicting non-churn
+## 🚀 Future Improvements
+- Deploy model with real-time scoring
+- Monitor performance drift
+- Incorporate additional behavioral features
+- Experiment with advanced ensemble techniques
 
-------------------------------------------------------------------------
+---
 
-## Recommendations
-
-To improve performance and reduce business risk:
-
--   Improve detection of at-risk customers
--   Focus on churn identification rather than overall accuracy
--   Explore advanced modeling approaches
--   Optimize evaluation toward recall and balanced performance
-
-------------------------------------------------------------------------
-
-## Conclusion
-
-While the model demonstrates strong headline accuracy (86%), it is not
-yet ready for deployment due to weak churn detection capability. Further
-refinement is required to enhance predictive performance and support
-effective retention strategies.
-
-------------------------------------------------------------------------
-
-## Author
-
-Data Science Project -- Customer Churn Prediction
+## 👤 Author
+Isaac Macharia
